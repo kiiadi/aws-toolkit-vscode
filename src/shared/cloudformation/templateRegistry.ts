@@ -30,6 +30,7 @@ export class CloudFormationTemplateRegistry extends WatchedFiles<CloudFormation.
         try {
             template = await CloudFormation.load(path)
         } catch (e) {
+            getLogger().error(`Failed to parse CFN template ${path}: %O`, e)
             await updateYamlSchemasArray(path, 'none')
             return undefined
         }
