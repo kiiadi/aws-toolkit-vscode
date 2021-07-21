@@ -5,14 +5,13 @@
 
 import * as vscode from 'vscode'
 import { getLogger } from '../logger'
-import { activateExtension, localize } from '../utilities/vsCodeUtils'
+import { localize } from '../utilities/vsCodeUtils'
 
 import { CloudFormationTemplateRegistry } from './templateRegistry'
 import { ext } from '../extensionGlobals'
 import { getIdeProperties } from '../extensionUtilities'
 import { NoopWatcher } from '../watchedFiles'
 import { refreshSchemas } from './cloudformation'
-import { VSCODE_EXTENSION_ID } from '../extensions'
 
 export const TEMPLATE_FILE_GLOB_PATTERN = '**/template.{yaml,yml}'
 
